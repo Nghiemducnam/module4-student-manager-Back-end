@@ -1,0 +1,13 @@
+<a [routerLink]="['']">Về trang chủ</a>
+<h2 class="text-center">Customer create form</h2>
+<form [formGroup]="createForm" (ngSubmit)="addClass()" class="col-md-6 offset-md-3">
+  <div class="form-group row">
+    <label class="col">
+      First name
+      <input type="text" class="form-control" formControlName="className">
+    </label>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" type="submit" [disabled]='createForm.invalid'>Submit</button>
+  </div>
+</form>

@@ -1,0 +1,42 @@
+<a [routerLink]="['']">Về trang chủ</a>
+<h2 class="text-center">Tạo mới 1 học sinh</h2>
+<form [formGroup]="createForm" (ngSubmit)="create()" class="col-md-6 offset-md-3">
+  <div class="form-group row">
+    <label class="col">
+      Name
+      <input type="text" class="form-control" formControlName="studentName">
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Age
+      <input type="text" class="form-control" formControlName="age">
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Image
+      <input type="text" class="form-control" formControlName="image">
+    </label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Lớp học
+      <select class="custom-select " formControlName="select">
+        <option value="" selected disabled hidden>Please select Tag</option>
+        <option  *ngFor="let clazz of classes" value="{{clazz.classId}}">{{clazz.className}}</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Tạo mới</button>
+  </div>
+</form>
+
+<!--<pre>-->
+<!--{{ createForm.value | json}}-->
+<!--</pre>-->
